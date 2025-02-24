@@ -437,19 +437,24 @@ body {
 
   .container {
     width: 100%;
+    display: flex;
+    flex-direction: row;
     border-radius: 10px;
     padding: 10px;
+    min-height: auto;
   }
 
   .sidebar {
-    width: 100%;
-    border-radius: 10px 10px 0 0;
+    width: 300px;
+    min-width: 300px;
+    border-radius: 10px 0 0 10px;
     padding: 20px;
   }
 
   .main-content {
+    flex: 1;
     padding: 20px;
-    width: 100%;
+    width: calc(100% - 300px);
   }
 
   .project-images {
@@ -484,7 +489,6 @@ body {
 
   h1 {
     font-size: 24px;
-    text-align: center;
   }
 
   h2 {
@@ -498,7 +502,6 @@ body {
 
   .subtitle {
     font-size: 16px;
-    text-align: center;
   }
 
   .app-wrapper {
@@ -509,6 +512,22 @@ body {
 
   body {
     padding: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-width: 100%;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .main-content {
+    width: 100%;
   }
 }
 
